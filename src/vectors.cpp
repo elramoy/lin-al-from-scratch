@@ -13,16 +13,15 @@ void printVector(const Vec& v){
 Vec scalar(const Vec& v, int t){
     Vec scaledVector(v.size());
     for (size_t i = 0; i < v.size(); i++){
-        scaledVector[i] = v[i];
+        scaledVector[i] = v[i] * t;
     }
     return scaledVector;
 }
 
 Vec addition(const Vec& v1, const Vec& v2){
     Vec comboVector (v1.size());
-    for(int i = 0; i < v1.size(); i++){
-        int sum = v1[i] + v2[i];
-        comboVector.push_back(sum);
+    for(size_t i = 0; i < v1.size(); i++){
+        comboVector[i] = v1[i] + v2[i];
     }
     return comboVector;
 }
@@ -47,7 +46,7 @@ float vectorLength(const Vec& v){
     for(auto element : v){
         sum += element * element;
     }
-    sum = sqrt(sum);
+    sum = std::sqrt(sum);
     return sum;
 }
 
