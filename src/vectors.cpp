@@ -35,7 +35,7 @@ Vec linearCombination(const Vec& v1, int t1, const Vec& v2, int t2){
 
 float dotProduct(const Vec& v1, const Vec& v2){
     float accumulator = 0;
-    for(int i = 0; i < v1.size(); i++){
+    for(size_t i = 0; i < v1.size(); i++){
         accumulator += v1[i] * v2[i];
     }
     return accumulator;
@@ -46,8 +46,7 @@ float vectorLength(const Vec& v){
     for(auto element : v){
         sum += element * element;
     }
-    sum = std::sqrt(sum);
-    return sum;
+    return std::sqrt(sum);
 }
 
 Vec normalization(const Vec& v){
@@ -58,3 +57,4 @@ Vec normalization(const Vec& v){
     }
     return unitV;
 }
+
